@@ -4,21 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const progressContainer = document.getElementById('progress-container');
     const loveText = document.getElementById('love-text');
 
-    let countdown = 5;
+    setTimeout(() => {
+        countdownElement.style.display = 'none';
+        progressContainer.style.display = 'block';
+        loveText.style.display = 'block';
 
-    const countdownInterval = setInterval(() => {
-        countdown--;
-        countdownElement.innerText = countdown;
-
-        if (countdown === 0) {
-            clearInterval(countdownInterval);
-            countdownElement.style.display = 'none';
-            progressContainer.style.display = 'block';
-            loveText.style.display = 'block';
-
-            setTimeout(() => {
-                progressBar.style.width = '100%';
-            }, 500);
-        }
-    }, 1000);
+        setTimeout(() => {
+            progressBar.style.width = '100%';
+        }, 500);
+    }, 5000);
 });
